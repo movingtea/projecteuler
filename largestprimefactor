@@ -1,0 +1,27 @@
+func isPrime (input: Int) -> Bool {
+    if input <= 0 {
+        return false
+    }
+    else {
+        for i in 2..<input {
+            if (input % i == 0) {
+                return false
+            }
+        }
+    }
+    return true
+}
+
+func lagestPrimeFactor(number: Int) -> Int {
+    var primeFactorArray = [Int]()
+    for i in 2..<number {
+        if ((number % i == 0) && isPrime(input: i)) {
+            primeFactorArray.append(i)
+        }
+    }
+    
+    
+    return primeFactorArray.max()!
+}
+
+print(lagestPrimeFactor(number: 600851475143))
