@@ -1,0 +1,29 @@
+var primeSet = [Int]()
+
+func isPrime (input: Int) -> Bool {
+    if input <= 0 {
+        return false
+    }
+    else {
+        for i in 2..<input {
+            if (input % i == 0) {
+                return false
+            }
+        }
+    }
+    return true
+}
+
+for i in 2... {
+    if isPrime(input: i) {
+        primeSet.append(i)
+    }
+    if primeSet.count > 10000 {
+       break
+    }
+}
+
+let startTime = CFAbsoluteTimeGetCurrent()
+let elapsedTime = CFAbsoluteTimeGetCurrent() - startTime
+
+print("\(primeSet[10000]), elapsedTime: \(String(format: "% .6f",elapsedTime)) sec")
