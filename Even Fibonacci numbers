@@ -1,0 +1,26 @@
+var number = 0
+var arrayResult = [Int]()
+
+func fibonacci (n: Int) -> Int {
+    if n <= 1 {
+        number = 1
+    }
+    else {
+        while number < 4000000{
+            number = fibonacci(n: (n - 1)) + fibonacci(n: (n - 2))
+        }
+        
+    }
+    
+    return number
+}
+
+
+for i in 1... {
+    let arrayItem = fibonacci(n: i)
+    if (arrayItem % 2 == 0 && arrayItem < 4000000) {
+        arrayResult.append(arrayItem)
+   }
+}
+print(arrayResult)
+print(arrayResult.reduce(0, +))
